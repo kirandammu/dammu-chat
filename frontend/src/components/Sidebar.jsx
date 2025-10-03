@@ -22,14 +22,14 @@ const Sidebar = () => {
         <input placeholder='search here... ' onChange={(e)=>setInput(e.target.value)} type='text' className=' bg-gray-200 p-1.5 m-2 border rounded-md border-gray-500 outline-none' />
       </div>
       <div className="overflow-y-auto w-full py-3">
-        {filteredUsers.map((user) => (
+        {filteredUsers?.map((user) => (
           <button
-            key={user._id}
+            key={user?._id}
             onClick={() => setSelectedUser(user)}
             className={`
               w-full p-2 flex items-center gap-3 hover:bg-gray-900
               hover:bg-base-300 transition-colors
-              ${selectedUser?._id === user._id ? " bg-gray-700 " : ""}
+              ${selectedUser?._id === user?._id ? " bg-gray-700 " : ""}
             `}
           >
             <div className="relative mx-auto lg:mx-0">
