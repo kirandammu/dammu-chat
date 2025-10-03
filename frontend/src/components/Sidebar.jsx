@@ -23,7 +23,7 @@ const Sidebar = () => {
       </div>
       <div className="overflow-y-auto w-full py-3">
         {filteredUsers?.map((user) => (
-          <button
+          <div
             key={user?._id}
             onClick={() => setSelectedUser(user)}
             className={`
@@ -38,7 +38,7 @@ const Sidebar = () => {
                 alt={user.name}
                 className="size-12 object-cover rounded-full"
               />
-              {onlineUsers.includes(user._id) && (
+              {onlineUsers?.includes(user?._id) && (
                 <span
                   className="absolute bottom-1 right-1 w-2.5 h-2.5 border-1 border-white bg-green-600 
                   rounded-full "
@@ -51,7 +51,7 @@ const Sidebar = () => {
               <div className="font-medium text-white">{user.fullName}</div>
               <div className="text-xs line-clamp-1 text-white">{user.bio}</div>
             </div>
-          </button>
+          </div>
         ))}
 
         {filteredUsers.length === 0 && (
