@@ -22,7 +22,7 @@ const Sidebar = () => {
         <input placeholder='search here... ' onChange={(e)=>setInput(e.target.value)} type='text' className=' bg-gray-200 p-1.5 m-2 border rounded-md border-gray-500 outline-none' />
       </div>
       <div className="overflow-y-auto w-full py-3">
-        {filteredUsers?.map((user) => (
+        {/* {filteredUsers?.map((user) => (
           <div
             key={user?._id}
             onClick={() => setSelectedUser(user)}
@@ -46,13 +46,12 @@ const Sidebar = () => {
               )}
             </div>
 
-            {/* User info - only visible on larger screens */}
-            <div className="hidden lg:block text-left min-w-0">
+            {/* <div className="hidden lg:block text-left min-w-0">
               <div className="font-medium text-white">{user.fullName}</div>
               <div className="text-xs line-clamp-1 text-white">{user.bio}</div>
             </div>
-          </div>
-        ))}
+          </div> 
+        ))} */}
 
         {filteredUsers.length === 0 && (
           <div className="text-center text-zinc-500 py-4">No online users</div>
